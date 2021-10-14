@@ -6,6 +6,11 @@ ESP32 aan de slag te gaan, plus per opdracht de
 bijbehorende informatie wat betreft de opdracht en de
 sensoren en actuatoren.
 
+Voor een vrij beknopt maar volledig overzicht van de
+functionaliteit van MicroPython op de ESP32 kan de website
+https://docs.micropython.org/en/latest/esp32/quickref.html#
+geraadpleegd worden.
+
 ## Instructies
 - Maak in je eigen repository een **map** met de naam IoT-Smart-home.
 - Sla daarin je **.py** bestanden op.
