@@ -24,3 +24,10 @@ geraadpleegd worden.
 - Week 3-6: product bouwen
 - Kerstvakantie
 - Week 7: product bouwen en opleveren
+
+## Teacher's note
+```bash
+pip install esptool
+esptool --chip esp32 --port COM4 erase_flash
+esptool --chip esp32 --port COM4 --baud 115200 write_flash -z 0x1000 Downloads\esp32-20210902-v1.17.bin
+```
