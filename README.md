@@ -25,6 +25,9 @@ geraadpleegd worden.
 - Kerstvakantie
 - Week 7: product bouwen en opleveren
 
+## Pinout schema
+https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/08/ESP32-DOIT-DEVKIT-V1-Board-Pinout-30-GPIOs-Copy.png?resize=966%2C574&ssl=1
+
 ## Teacher's note
 ```bash
 pip install esptool
