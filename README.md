@@ -25,6 +25,10 @@ geraadpleegd worden.
 - Kerstvakantie
 - Week 7: product bouwen en opleveren
 
+## WiFi gegevens
+SSID: IOT-IN  
+PW:   93880195750058952287
+
 ## Pinout schema
 https://i1.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/08/ESP32-DOIT-DEVKIT-V1-Board-Pinout-30-GPIOs-Copy.png?resize=966%2C574&ssl=1
 
