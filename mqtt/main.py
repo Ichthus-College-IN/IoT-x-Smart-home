@@ -18,19 +18,19 @@ def ready_to_publish():
     else:
         return False
 
-def publish():
+def pubsub():
     count = 1
     while True:
         checkwifi()                                                         # check if WiFi is still connected
         client.check_msg()                                                  # check for incoming messages (non-blocking)
         if ready_to_publish():                                              # if the interval time has passed, publish again
-            client.ping()                                                   # ping the MQTT broker to refresh the keepalive
             temperature=esp32.raw_temperature()                             # get internal temperature of chip
             msg = '{"Count":%u,"Temperature":%2.2f}' % (count,temperature)  # create a message in JSON format
             client.publish('ESP32' + '/data/json', msg)
             count = count + 1
 
-_thread.start_new_thread(publish, ())
+# launch pub/sub thread individually
+_thread.start_new_thread(pubsub, ())
 
 #%% main thread
 from machine import Pin, PWM
@@ -54,11 +54,11 @@ def pulse(LEDs_list, t=25):
 		for j in LEDs_list:
 			j.duty(int(sin(i / 20 * pi + offset * pi) * 500 + 500)) # set PWM duty cycle to some value depending on the LED
 			offset += 0.5
-		time.sleep_ms(t)               								# sleep for 't' milliseconds
+		time.sleep_ms(t)               					# sleep for 't' milliseconds
 
 def no_pulse(LEDs_list):
 	for j in LEDs_list:
-		j.duty(0) 													# set PWM duty cycle for all LEDs to 0
+		j.duty(0) 							# set PWM duty cycle for all LEDs to 0
 
 pins = [2, 25, 26, 27]
 LEDs = LEDs_init(pins)
