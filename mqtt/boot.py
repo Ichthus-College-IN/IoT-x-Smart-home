@@ -25,7 +25,7 @@ checkwifi()
 #%% start MQTT client
 enable = True
 
-# Callback function for incoming messages
+# callback function for incoming messages
 def on_message_received(topic, msg):
     global enable
     print(topic, msg)
@@ -35,8 +35,6 @@ def on_message_received(topic, msg):
 # create MQTT client object
 client = MQTTClient(c.CLIENTID, c.BROKER, port=c.PORT, user=c.HA_USER, password=c.HA_PASS)
 client.DEBUG=False
-client.keepalive=30                                     # required for Last Will and Testament
-client.set_last_will('ESP32' + '/status', c.CLIENTID, retain=True)
 client.reconnect()                                      # ensures the MQTT client is connected
 client.set_callback(on_message_received)                # set the callback function for incoming messages
 
